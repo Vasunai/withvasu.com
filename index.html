@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Header / Navigation -->
 <header>
     <div class="logo">
         <img src="logo.png" alt="Logo">
@@ -22,24 +22,47 @@
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#clients">Clients</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Welcome to Your Media House</h1>
-        <p>We create stunning digital experiences</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+<!-- Hero Slider -->
+<section id="home" class="hero-slider">
+    <div class="slides">
+        <div class="slide active" style="background-image: url('placeholder1.jpg');">
+            <div class="slide-content">
+                <h1>We Create Stunning Digital Experiences</h1>
+                <p>Helping brands stand out in the digital world.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('placeholder2.jpg');">
+            <div class="slide-content">
+                <h1>Innovative Branding & Marketing</h1>
+                <p>Crafting memorable brand stories that resonate.</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('placeholder3.jpg');">
+            <div class="slide-content">
+                <h1>Modern Web Design</h1>
+                <p>Responsive, sleek, and performance-driven websites.</p>
+                <a href="#contact" class="btn">Work With Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="slider-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
     </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="about">
     <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. We craft digital stories that resonate.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. We craft digital stories that resonate and elevate your brand.</p>
 </section>
 
 <!-- Services Section -->
@@ -68,6 +91,18 @@
         <div class="project-card">Project 1</div>
         <div class="project-card">Project 2</div>
         <div class="project-card">Project 3</div>
+        <div class="project-card">Project 4</div>
+    </div>
+</section>
+
+<!-- Clients Section -->
+<section id="clients" class="clients">
+    <h2>Our Clients</h2>
+    <div class="client-logos">
+        <img src="client1.png" alt="Client 1">
+        <img src="client2.png" alt="Client 2">
+        <img src="client3.png" alt="Client 3">
+        <img src="client4.png" alt="Client 4">
     </div>
 </section>
 
