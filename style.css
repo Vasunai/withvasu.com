@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   background: #000;
   color: #fff;
@@ -13,26 +12,17 @@ body {
   overflow-x: hidden;
 }
 
-/* LOGO — FIXED & VISIBLE */
+/* LOGO */
 .logo {
   position: fixed;
   top: 24px;
   left: 24px;
   z-index: 9999;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
   padding: 14px 18px;
   border: 1.5px solid #fff;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.logo:hover {
-  background: #fff;
-  color: #000;
+  letter-spacing: 0.2em;
 }
 
 /* PARTICLES */
@@ -54,8 +44,7 @@ body {
 }
 
 @keyframes ambientMove {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(30px,-30px); }
+  to { transform: translate(30px,-30px); }
 }
 
 /* HERO */
@@ -65,7 +54,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .layer {
@@ -74,25 +62,13 @@ body {
 }
 
 .back {
-  background: radial-gradient(circle at center, #111, #000);
-  transform: translateZ(-300px);
+  background: radial-gradient(circle, #111, #000);
 }
 
 .mid {
   text-align: center;
-  z-index: 2;
 }
 
-.front {
-  background: linear-gradient(
-    to bottom,
-    transparent 40%,
-    rgba(255,255,255,0.05)
-  );
-  transform: translateZ(150px);
-}
-
-/* TEXT */
 h1 {
   font-size: 4rem;
   letter-spacing: 0.08em;
@@ -107,11 +83,66 @@ h1 {
 
 /* EDITORIAL */
 .editorial {
-  padding: 160px 10%;
-  max-width: 1200px;
+  padding: 140px 10%;
+  max-width: 1100px;
   margin: auto;
 }
 
+.editorial h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.editorial p {
+  opacity: 0.6;
+}
+
+/* WORKS */
+.works {
+  padding: 120px 8%;
+  display: grid;
+  gap: 80px;
+}
+
+.work-card {
+  position: relative;
+  height: 420px;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 40px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.work-card:hover {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.02);
+}
+
+.work-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(0,0,0,0.9)
+    );
+  z-index: -1;
+}
+
+.work-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.work-card span {
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
