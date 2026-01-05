@@ -1,10 +1,12 @@
+// withvasu.com scroll-based 3D parallax
+
 console.log("withvasu.com loaded");
 
-const back = document.querySelector('.back');
-const mid = document.querySelector('.mid');
-const front = document.querySelector('.front');
+const back = document.querySelector(".back");
+const mid = document.querySelector(".mid");
+const front = document.querySelector(".front");
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
   back.style.transform = `translateZ(-300px) translateY(${scrollY * 0.1}px)`;
