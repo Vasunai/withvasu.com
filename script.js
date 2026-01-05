@@ -1,29 +1,29 @@
-console.log("withvasu.com loaded");
+console.log("withvasu.com cinematic mode");
 
-const back = document.querySelector(".back");
-const mid = document.querySelector(".mid");
-const front = document.querySelector(".front");
+const back = document.querySelector(".depth-back");
+const mid = document.querySelector(".depth-mid");
+const front = document.querySelector(".depth-front");
 
-let currentScroll = 0;
-let targetScroll = 0;
+let current = 0;
+let target = 0;
 
 window.addEventListener("scroll", () => {
-  targetScroll = window.scrollY;
+  target = window.scrollY;
 });
 
-function animate() {
-  currentScroll += (targetScroll - currentScroll) * 0.08;
+function loop() {
+  current += (target - current) * 0.07;
 
   back.style.transform =
-    `translateZ(-350px) translateY(${currentScroll * 0.1}px)`;
+    `translateZ(-400px) translateY(${current * 0.08}px)`;
 
   mid.style.transform =
-    `translateZ(0px) translateY(${currentScroll * 0.25}px)`;
+    `translateZ(0px) translateY(${current * 0.18}px)`;
 
   front.style.transform =
-    `translateZ(200px) translateY(${currentScroll * 0.45}px)`;
+    `translateZ(200px) translateY(${current * 0.35}px)`;
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(loop);
 }
 
-animate();
+loop();
