@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vasudev</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Media House</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- Ambient life -->
-  <div class="ambient"></div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="layer depth-back"></div>
-
-    <div class="layer depth-mid">
-      <div class="logo">V</div>
-      <h1>Hi, I’m Vasudev</h1>
-      <p>Founder · Editor</p>
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
     </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="layer depth-front"></div>
-  </section>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Your Media House</h1>
+        <p>We create stunning digital experiences</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+</section>
 
-  <!-- WORK -->
-  <section class="work">
-    <div class="work-card">WORK 01</div>
-    <div class="work-card">WORK 02</div>
-    <div class="work-card">WORK 03</div>
-  </section>
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. We craft digital stories that resonate.</p>
+</section>
 
-  <!-- FEATURE -->
-  <section class="feature">
-    <div class="feature-box">FEATURED FILM</div>
-  </section>
+<!-- Services Section -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Branding</h3>
+            <p>Creating unique brand identities that stand out.</p>
+        </div>
+        <div class="service-card">
+            <h3>Web Design</h3>
+            <p>Beautiful and responsive websites for your business.</p>
+        </div>
+        <div class="service-card">
+            <h3>Marketing</h3>
+            <p>Effective digital marketing to reach your audience.</p>
+        </div>
+    </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <a href="#">Instagram</a>
-    <a href="#">YouTube</a>
-    <a href="#">Email</a>
-  </footer>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+    </div>
+</section>
 
-  <div class="scroll-space"></div>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-  <script src="script.js"></script>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Your Media House. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
