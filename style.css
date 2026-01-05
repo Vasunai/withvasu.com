@@ -5,60 +5,56 @@
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
-  background: #0e0e0e; /* soft black */
-  color: #f5f5f5;
+  background: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
 
-/* ===== HERO ===== */
-
-.hero {
+/* 3D Scene */
+.scene {
   height: 100vh;
+  perspective: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1200px;
+  position: relative;
 }
 
-.hero-inner {
-  transform-style: preserve-3d;
-  animation: float 8s ease-in-out infinite;
+/* Layers */
+.layer {
+  position: absolute;
+  inset: 0;
 }
 
-.hero h1 {
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 500;
-  letter-spacing: -1px;
-  transform: translateZ(60px);
-  opacity: 0;
-  animation: reveal 1.4s ease forwards;
+.back {
+  background: radial-gradient(circle at center, #111, #000);
+  transform: translateZ(-300px);
 }
 
-.hero span {
-  display: block;
-  font-size: 0.9rem;
-  letter-spacing: 3px;
+.mid {
+  transform: translateZ(0);
+  text-align: center;
+}
+
+.front {
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(255,255,255,0.05)
+  );
+  transform: translateZ(150px);
+}
+
+/* Text */
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.08em;
+}
+
+p {
+  margin-top: 12px;
+  opacity: 0.6;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-top: 16px;
-  color: #bdbdbd;
-}
-
-/* ===== MOTION ===== */
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px) translateZ(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateZ(60px);
-  }
-}
-
-@keyframes float {
-  0%   { transform: rotateX(0deg) rotateY(0deg); }
-  50%  { transform: rotateX(6deg) rotateY(-6deg); }
-  100% { transform: rotateX(0deg) rotateY(0deg); }
 }
