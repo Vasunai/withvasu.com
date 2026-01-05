@@ -24,21 +24,12 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-let mouseX = 0, mouseY = 0;
-window.addEventListener("mousemove", e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-/* SCROLL + REVEAL */
-const reveals = document.querySelectorAll(".reveal");
-
 function animate() {
   ctx.clearRect(0,0,w,h);
 
   particles.forEach(p => {
-    p.x += p.vx + (mouseX - w/2) * 0.00001;
-    p.y += p.vy + (mouseY - h/2) * 0.00001;
+    p.x += p.vx;
+    p.y += p.vy;
 
     if (p.x < 0) p.x = w;
     if (p.x > w) p.x = 0;
@@ -46,12 +37,12 @@ function animate() {
     if (p.y > h) p.y = 0;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
     ctx.fillStyle = `rgba(255,255,255,${p.o})`;
     ctx.fill();
   });
 
-  reveals.forEach(el => {
+  document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
       el.classList.add("active");
     }
