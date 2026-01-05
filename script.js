@@ -1,4 +1,4 @@
-// Fade up & down animations
+// Fade up & down
 const fades = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries => {
