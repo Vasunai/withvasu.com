@@ -127,10 +127,7 @@ body {
   padding: 2rem;
   text-align: center;
   font-size: 13px;
-  opacity: .7;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  opacity: .5;
 }
 
 /* FADE */
