@@ -1,124 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Content House — Vasudev</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasudev Media</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-
-<!-- NAV -->
-<header class="nav">
-  <div class="logo-wrap">
-    <img src="assets/logo.png" alt="logo">
-  </div>
-
-  <nav class="nav-links">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact" class="btn">Book a Discovery Call</a>
-  </nav>
+<!-- Header / Navigation -->
+<header>
+    <div class="logo">
+        <!-- Updated path to assets folder -->
+        <img src="assets/logo.png" alt="Vasu Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- HOME -->
-<section class="section home">
-  <h1 class="shine word-animate">THE CONTENT HOUSE</h1>
-
-  <p class="sub word-animate">
-    We act as your remote content team — handling strategy, scripting, editing,
-    and optimization, so you can stay focused on building your business.
-  </p>
-</section>
-
-<!-- ABOUT -->
-<section class="section about" id="about">
-  <div class="about-text fade">
-    <h2>Hi, I’m Vasudev</h2>
-    <h3>Founder | Editor</h3>
-
-    <p>
-      I help founders escape competition through authenticity — by building
-      content systems that compound trust, clarity, and authority over time.
-    </p>
-
-    <p class="center-quote">
-      Escaping competition through authenticity
-    </p>
-  </div>
-
-  <div class="about-image fade">
-    <img src="assets/about.jpg" alt="Vasudev">
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section services" id="services">
-  <h2 class="fade">What We Do</h2>
-  <p class="fade">
-    Strategy-first short-form systems, clean edits, platform-native storytelling,
-    and distribution-ready execution — without noise.
-  </p>
-</section>
-
-<!-- PROJECTS -->
-<section class="section projects" id="projects">
-  <h2 class="fade">Flawless Short-Form Content</h2>
-  <p class="fade">
-    Content that doesn’t just perform — it positions.
-  </p>
-
-  <div class="embed-grid">
-    <div class="embed-box fade">
-      <!-- IG REEL -->
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DQKTKKKDggO/"
-        data-instgrm-version="14"></blockquote>
+<!-- Hero Section -->
+<section id="home" class="hero fade-in">
+    <div class="hero-content">
+        <h1>Hi, I’m Vasudev<br>Founder | Editor</h1>
+        <p>I help founders escape competition through authenticity — by building content systems that compound trust, clarity, and authority over time.</p>
+        <a href="#contact" class="btn-outline">Book Call</a>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </div>
-
-    <div class="embed-box fade">
-      <!-- THREADS -->
-      <blockquote class="text-post-media"
-        data-text-post-permalink="https://www.threads.com/@_vasudev_naidu_/post/DDFdyVpSLc-"></blockquote>
-    </div>
-
-    <div class="embed-box fade">
-      <!-- IG LONG -->
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DQKVwAMDmv2/"
-        data-instgrm-version="14"></blockquote>
-    </div>
-  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section contact" id="contact">
-  <h2 class="fade">Connect</h2>
-
-  <div class="socials fade">
-    <a href="https://www.instagram.com/_vasudev_naidu_/" target="_blank">Instagram</a>
-    <a href="https://www.threads.com/@_vasudev_naidu_" target="_blank">Threads</a>
-    <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">LinkedIn</a>
-    <a href="mailto:hello@withvasu.com">Email</a>
-    <a href="https://calendly.com/naiduvasu825/discussion" class="btn">Book a Discovery Call</a>
-  </div>
+<!-- About Section -->
+<section id="about" class="about fade-in">
+    <h2>What We Do</h2>
+    <img src="assets/about.jpg" alt="About Vasu" class="about-img">
+    <p>Strategy-first short-form systems, clean edits, platform-native storytelling, and distribution-ready execution — simple, effective, and noise-free.</p>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <span>The Content House © 2026</span>
+<!-- Services Section -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Branding</h3>
+            <p>We help brands find their authentic voice.</p>
+        </div>
+        <div class="service-card">
+            <h3>Content Systems</h3>
+            <p>Building content pipelines that grow trust and authority.</p>
+        </div>
+        <div class="service-card">
+            <h3>Distribution</h3>
+            <p>Ensuring your message reaches the right audience efficiently.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact fade-in">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Vasudev Media. All rights reserved.</p>
 </footer>
-
-<!-- Embed scripts -->
-<script async src="//www.instagram.com/embed.js"></script>
-<script async src="https://www.threads.com/embed.js"></script>
 
 <script src="script.js"></script>
 </body>
