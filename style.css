@@ -1,21 +1,21 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   background: #000;
   color: #fff;
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
-
-
-body {
-  background: #000;
+  font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
 
+/* ===============================
+   AMBIENT MOVING BACKGROUND
+   =============================== */
 .ambient-bg {
   position: fixed;
   inset: 0;
@@ -29,16 +29,16 @@ body {
 
 @keyframes ambientMove {
   0% {
-    transform: translateY(0px) translateX(0px) scale(1);
+    transform: translate(0, 0) scale(1);
   }
   100% {
-    transform: translateY(-40px) translateX(30px) scale(1.05);
+    transform: translate(30px, -40px) scale(1.05);
   }
 }
 
-}
-
-/* 3D Scene */
+/* ===============================
+   3D SCENE
+   =============================== */
 .scene {
   height: 100vh;
   perspective: 1200px;
@@ -48,10 +48,11 @@ body {
   position: relative;
 }
 
-/* Layers */
+/* LAYERS */
 .layer {
   position: absolute;
   inset: 0;
+  transform-style: preserve-3d;
 }
 
 .back {
@@ -62,6 +63,7 @@ body {
 .mid {
   transform: translateZ(0);
   text-align: center;
+  z-index: 2;
 }
 
 .front {
@@ -73,7 +75,7 @@ body {
   transform: translateZ(150px);
 }
 
-/* Text */
+/* TEXT */
 h1 {
   font-size: 4rem;
   letter-spacing: 0.08em;
