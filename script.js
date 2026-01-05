@@ -1,12 +1,49 @@
 console.log("withvasu.com loaded");
 
-// Elements
+/* ===============================
+   PARTICLES
+   =============================== */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+const particles = [];
+const COUNT = 120;
+
+for (let i = 0; i < COUNT; i++) {
+  particles.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.5 + 0.3,
+    vx: Math.random() * 0.2 - 0.1,
+    vy: Math.random() * 0.2 - 0.1,
+    o: Math.random() * 0.4 + 0.1
+  });
+}
+
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener("mousemove", e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+/* ===============================
+   3D SCENE ELEMENTS
+   =============================== */
 const scene = document.getElementById("scene");
 const back = document.querySelector(".back");
 const mid = document.querySelector(".mid");
 const front = document.querySelector(".front");
 
-// Scroll smoothing
 let currentScroll = 0;
 let targetScroll = 0;
 
@@ -14,17 +51,28 @@ window.addEventListener("scroll", () => {
   targetScroll = window.scrollY;
 });
 
-// Mouse tilt
-let mouseX = 0;
-let mouseY = 0;
-
-window.addEventListener("mousemove", (e) => {
-  mouseX = (e.clientX / window.innerWidth - 0.5) * 10;
-  mouseY = (e.clientY / window.innerHeight - 0.5) * 10;
-});
-
-// Animation loop
+/* ===============================
+   ANIMATION LOOP
+   =============================== */
 function animate() {
+  ctx.clearRect(0, 0, w, h);
+
+  // Draw particles
+  for (let p of particles) {
+    p.x += p.vx + (mouseX - w / 2) * 0.00001;
+    p.y += p.vy + (mouseY - h / 2) * 0.00001;
+
+    if (p.x < 0) p.x = w;
+    if (p.x > w) p.x = 0;
+    if (p.y < 0) p.y = h;
+    if (p.y > h) p.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${p.o})`;
+    ctx.fill();
+  }
+
   // Smooth scroll
   currentScroll += (targetScroll - currentScroll) * 0.08;
 
@@ -35,9 +83,10 @@ function animate() {
   front.style.transform =
     `translateZ(150px) translateY(${currentScroll * 0.4}px)`;
 
-  // Scene tilt (3D / 4D feel)
+  // Scene tilt
   scene.style.transform =
-    `rotateX(${-mouseY}deg) rotateY(${mouseX}deg)`;
+    `rotateX(${-(mouseY / h - 0.5) * 10}deg)
+     rotateY(${(mouseX / w - 0.5) * 10}deg)`;
 
   requestAnimationFrame(animate);
 }
