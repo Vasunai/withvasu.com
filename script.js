@@ -1,29 +1,16 @@
-console.log("withvasu.com cinematic mode");
-
-const back = document.querySelector(".depth-back");
-const mid = document.querySelector(".depth-mid");
-const front = document.querySelector(".depth-front");
-
-let current = 0;
-let target = 0;
-
-window.addEventListener("scroll", () => {
-  target = window.scrollY;
+// Smooth scrolling for navigation
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
-function loop() {
-  current += (target - current) * 0.07;
-
-  back.style.transform =
-    `translateZ(-400px) translateY(${current * 0.08}px)`;
-
-  mid.style.transform =
-    `translateZ(0px) translateY(${current * 0.18}px)`;
-
-  front.style.transform =
-    `translateZ(200px) translateY(${current * 0.35}px)`;
-
-  requestAnimationFrame(loop);
-}
-
-loop();
+// Contact form submit alert (placeholder)
+const form = document.querySelector('form');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Message sent! We will contact you soon.');
+    form.reset();
+});
