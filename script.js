@@ -1,14 +1,7 @@
-// Fade up & down
-const fades = document.querySelectorAll('.fade');
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
+    entry.target.classList.toggle("visible", entry.isIntersecting);
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.2 });
 
-fades.forEach(el => observer.observe(el));
+document.querySelectorAll(".fade, .words").forEach(el => observer.observe(el));
