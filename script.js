@@ -5,10 +5,12 @@ const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
 let w, h;
+
 function resize() {
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
 }
+
 window.addEventListener("resize", resize);
 resize();
 
@@ -24,8 +26,11 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
+/* REVEAL ON SCROLL */
+const reveals = document.querySelectorAll(".reveal");
+
 function animate() {
-  ctx.clearRect(0,0,w,h);
+  ctx.clearRect(0, 0, w, h);
 
   particles.forEach(p => {
     p.x += p.vx;
@@ -37,12 +42,12 @@ function animate() {
     if (p.y > h) p.y = 0;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(255,255,255,${p.o})`;
     ctx.fill();
   });
 
-  document.querySelectorAll(".reveal").forEach(el => {
+  reveals.forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
       el.classList.add("active");
     }
