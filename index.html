@@ -6,32 +6,32 @@
   <title>The Content House — Vasudev</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- Cursor -->
-<div class="cursor"></div>
-
 <!-- NAV -->
 <header class="nav">
-  <div class="logo-wrap">
-    <img src="assets/logo.png" alt="logo">
+  <div class="nav-left">
+    <img src="assets/logo.png" class="logo" alt="Logo">
   </div>
 
-  <nav class="nav-links">
+  <nav class="nav-right">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
-    <a href="#contact" class="btn">Book a Discovery Call</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- HOME -->
 <section class="section home">
-  <h1 class="word-animate shine">THE CONTENT HOUSE</h1>
-  <p class="sub word-animate">
+  <h1 class="hero-title shine words">
+    THE CONTENT HOUSE
+  </h1>
+
+  <p class="hero-sub words">
     We act as your remote content team — handling strategy, scripting, editing,
     and optimization, so you can stay focused on building your business.
   </p>
@@ -39,84 +39,80 @@
 
 <!-- ABOUT -->
 <section class="section about" id="about">
-  <div class="about-text fade">
+  <div class="about-text words">
     <h2>Hi, I’m Vasudev</h2>
     <h3>Founder | Editor</h3>
 
     <p>
-      I help founders escape competition through authenticity — by building
-      content systems that compound trust, clarity, and authority over time.
-    </p>
-
-    <p class="center-quote">
-      Escaping competition through authenticity
+      At The Content House, we help founders escape competition through authenticity —
+      building systems that turn attention into long-term trust.
     </p>
   </div>
 
-  <div class="about-image fade">
+  <div class="about-image">
     <img src="assets/about.jpg" alt="Vasudev">
   </div>
 </section>
 
 <!-- SERVICES -->
 <section class="section services" id="services">
-  <h2 class="fade">What We Do</h2>
-  <p class="fade">
-    Strategy-first short-form systems, clean edits, platform-native storytelling,
-    and distribution-ready execution — without noise.
+  <p class="center-line words">
+    Escaping competition through authenticity
   </p>
 </section>
 
 <!-- PROJECTS -->
 <section class="section projects" id="projects">
-  <h2 class="fade">Flawless Short-Form Content</h2>
-  <p class="fade">
-    Content that doesn’t just perform — it positions.
-  </p>
 
-  <div class="embed-grid">
-    <div class="embed-box fade">
-      <!-- IG REEL -->
+  <div class="project-block fade">
+    <!-- IG REEL EMBED -->
+    <div class="embed-frame">
+      <!-- YOUR IG REEL EMBED -->
       <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DQKTKKKDggO/"
-        data-instgrm-version="14"></blockquote>
-    </div>
-
-    <div class="embed-box fade">
-      <!-- THREADS -->
-      <blockquote class="text-post-media"
-        data-text-post-permalink="https://www.threads.com/@_vasudev_naidu_/post/DDFdyVpSLc-"></blockquote>
-    </div>
-
-    <div class="embed-box fade">
-      <!-- IG LONG -->
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DQKVwAMDmv2/"
-        data-instgrm-version="14"></blockquote>
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKTKKKDggO/">
+      </blockquote>
     </div>
   </div>
+
+  <div class="project-block fade">
+    <!-- THREADS EMBED -->
+    <div class="embed-frame">
+      <blockquote class="text-post-media"
+        data-text-post-permalink="https://www.threads.com/@_vasudev_naidu_/post/DDFdyVpSLc-">
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="project-block fade">
+    <!-- IG LONG FORM -->
+    <div class="embed-frame">
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKVwAMDmv2/">
+      </blockquote>
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
-  <h2 class="fade">Connect</h2>
-
   <div class="socials fade">
-    <a href="https://www.instagram.com/_vasudev_naidu_/" target="_blank">Instagram</a>
-    <a href="https://www.threads.com/@_vasudev_naidu_" target="_blank">Threads</a>
-    <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">LinkedIn</a>
-    <a href="mailto:hello@withvasu.com">Email</a>
-    <a href="https://calendly.com/naiduvasu825/discussion" class="btn">Book a Discovery Call</a>
+    <a href="https://www.instagram.com/_vasudev_naidu_" target="_blank">IG</a>
+    <a href="https://www.threads.com/@_vasudev_naidu_" target="_blank">TH</a>
+    <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">IN</a>
+    <a href="mailto:hello@withvasu.com">EM</a>
+    <a href="https://calendly.com/naiduvasu825/discussion" class="book">Book a Discovery Call</a>
   </div>
 </section>
 
-<!-- FOOTER STRIP -->
+<!-- FOOTER -->
 <footer class="footer">
   <span>The Content House © 2026</span>
+  <a href="https://calendly.com/naiduvasu825/discussion">Book a Discovery Call</a>
 </footer>
 
 <!-- EMBED SCRIPTS -->
-<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 <script async src="https://www.threads.com/embed.js"></script>
 
 <script src="script.js"></script>
