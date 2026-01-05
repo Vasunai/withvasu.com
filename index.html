@@ -1,146 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Media House</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vasudev — Founder | Editor</title>
+
+  <!-- Font (similar modern editorial style) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <div class="logo"><img src="logo.png" alt="Logo"></div>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#clients">Clients</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Cursor -->
+<div class="cursor"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <img src="assets/logo.png" class="logo" alt="logo">
+  <a href="#contact" class="btn">Book a discovery call</a>
 </header>
 
-<!-- Hero Slider -->
-<section id="home" class="hero-slider">
-  <div class="slides">
-    <div class="slide active" style="background-image: url('placeholder1.jpg');">
-      <div class="slide-content">
-        <h1>We Create Stunning Digital Experiences</h1>
-        <p>Helping brands stand out in the digital world.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('placeholder2.jpg');">
-      <div class="slide-content">
-        <h1>Innovative Branding & Marketing</h1>
-        <p>Crafting memorable brand stories that resonate.</p>
-        <a href="#contact" class="btn">Contact Us</a>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('placeholder3.jpg');">
-      <div class="slide-content">
-        <h1>Modern Web Design</h1>
-        <p>Responsive, sleek, and performance-driven websites.</p>
-        <a href="#contact" class="btn">Work With Us</a>
-      </div>
-    </div>
+<!-- HOME -->
+<section class="section home fade">
+  <div class="home-text">
+    <h1>Hi, I'm <span>Vasudev</span></h1>
+    <h2>Founder | Editor</h2>
+
+    <p class="subtitle">
+      Building content systems for founders that convert attention into trust.
+    </p>
+
+    <a href="#contact" class="btn secondary">Book a discovery call</a>
   </div>
-  <div class="slider-nav">
-    <span class="prev">&#10094;</span>
-    <span class="next">&#10095;</span>
+
+  <div class="home-image">
+    <img src="assets/home.jpg" alt="Vasudev">
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stat">
-      <h3 class="counter" data-target="500000000">0</h3>
-      <p>Views Generated</p>
-    </div>
-    <div class="stat">
-      <h3 class="counter" data-target="6000">0</h3>
-      <p>Videos Created</p>
-    </div>
-    <div class="stat">
-      <h3 class="counter" data-target="3">0</h3>
-      <p>Years Building Brands</p>
-    </div>
-    <div class="stat">
-      <h3 class="counter" data-target="50">0</h3>
-      <p>Trusted by Industry Leaders</p>
-    </div>
+<!-- ABOUT -->
+<section class="section about fade">
+  <h3>About</h3>
+  <p>
+    I’m Vasudev, a content-focused founder and editor helping creators and
+    businesses grow through consistent, high-quality short-form content.
+    I specialize in clean storytelling, minimal edits, and distribution-ready formats.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects fade">
+  <div class="project-head">
+    <h3>Flawless short-form content</h3>
+    <p>
+      We help founders to provide consistent, high-targeted content
+      with clean, minimal edits.
+    </p>
   </div>
-</section>
 
-<!-- About -->
-<section id="about" class="about fade-in">
-  <h2>About Us</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. We craft digital stories that resonate and elevate your brand.</p>
-</section>
-
-<!-- Services -->
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Branding</h3>
-      <p>Creating unique brand identities that stand out.</p>
-    </div>
-    <div class="service-card">
-      <h3>Web Design</h3>
-      <p>Beautiful and responsive websites for your business.</p>
-    </div>
-    <div class="service-card">
-      <h3>Marketing</h3>
-      <p>Effective digital marketing to reach your audience.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="projects">
-  <h2>Our Projects</h2>
   <div class="project-grid">
-    <div class="project-card">Project 1</div>
-    <div class="project-card">Project 2</div>
-    <div class="project-card">Project 3</div>
-    <div class="project-card">Project 4</div>
+    <div class="reel">Reel 1</div>
+    <div class="reel">Reel 2</div>
+    <div class="reel">Reel 3</div>
+  </div>
+
+  <div class="yt">
+    YouTube Long-Form Placeholder
   </div>
 </section>
 
-<!-- Clients / Testimonials -->
-<section id="clients" class="clients">
-  <h2>Our Clients</h2>
-  <div class="client-logos">
-    <img src="client1.png" alt="Client 1">
-    <img src="client2.png" alt="Client 2">
-    <img src="client3.png" alt="Client 3">
-    <img src="client4.png" alt="Client 4">
+<!-- CONTACT -->
+<section class="section contact fade" id="contact">
+  <h3>Contact</h3>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/?next=%2F" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">LinkedIn</a>
+    <a href="mailto:hello@withvasu.com">Email</a>
+    <a href="#" title="Calendly">Calendly</a>
   </div>
 </section>
-
-<!-- Contact -->
-<section id="contact" class="contact fade-in">
-  <h2>Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2026 Your Media House. All rights reserved.</p>
-</footer>
 
 <script src="script.js"></script>
 </body>
