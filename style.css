@@ -9,6 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background: #000;
     color: #fff;
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -19,7 +20,7 @@ header {
     padding: 20px 50px;
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     z-index: 1000;
 }
 
@@ -37,24 +38,43 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Hero Section */
-.hero {
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
     height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #333, #555);
 }
 
-.hero h1 {
+.slide-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.hero p {
+.slide-content p {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
@@ -66,6 +86,25 @@ nav ul li a {
     border-radius: 25px;
     text-decoration: none;
     font-weight: 700;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.slider-nav span {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 50%;
 }
 
 /* Sections */
@@ -93,11 +132,12 @@ h2 {
     border-radius: 15px;
     width: 250px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    background: #222;
 }
 
 /* Projects */
@@ -116,6 +156,24 @@ h2 {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+}
+
+/* Clients */
+.client-logos {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.client-logos img {
+    width: 120px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.client-logos img:hover {
+    filter: grayscale(0%);
 }
 
 /* Contact */
@@ -150,5 +208,16 @@ footer {
     text-align: center;
     padding: 30px;
     background: #111;
-    margin-top: 50px;
+}
+
+/* Fade-in Animation for Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
