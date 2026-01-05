@@ -14,7 +14,7 @@ body {
 }
 
 /* ===============================
-   AMBIENT MOVING BACKGROUND
+   AMBIENT BACKGROUND (ALWAYS MOVING)
    =============================== */
 .ambient-bg {
   position: fixed;
@@ -46,6 +46,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 /* LAYERS */
@@ -86,4 +87,9 @@ p {
   opacity: 0.6;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+}
+
+/* SCROLL SPACE */
+.scroll-space {
+  height: 200vh;
 }
