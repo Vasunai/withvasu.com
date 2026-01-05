@@ -1,8 +1,6 @@
 console.log("withvasu.com loaded");
 
-/* ===============================
-   PARTICLES
-   =============================== */
+/* PARTICLES */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -15,9 +13,7 @@ window.addEventListener("resize", resize);
 resize();
 
 const particles = [];
-const COUNT = 120;
-
-for (let i = 0; i < COUNT; i++) {
+for (let i = 0; i < 120; i++) {
   particles.push({
     x: Math.random() * w,
     y: Math.random() * h,
@@ -28,17 +24,13 @@ for (let i = 0; i < COUNT; i++) {
   });
 }
 
-let mouseX = 0;
-let mouseY = 0;
-
+let mouseX = 0, mouseY = 0;
 window.addEventListener("mousemove", e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
-/* ===============================
-   3D SCENE ELEMENTS
-   =============================== */
+/* 3D SCENE */
 const scene = document.getElementById("scene");
 const back = document.querySelector(".back");
 const mid = document.querySelector(".mid");
@@ -51,16 +43,25 @@ window.addEventListener("scroll", () => {
   targetScroll = window.scrollY;
 });
 
-/* ===============================
-   ANIMATION LOOP
-   =============================== */
-function animate() {
-  ctx.clearRect(0, 0, w, h);
+/* REVEAL */
+const reveals = document.querySelectorAll(".reveal");
 
-  // Draw particles
-  for (let p of particles) {
-    p.x += p.vx + (mouseX - w / 2) * 0.00001;
-    p.y += p.vy + (mouseY - h / 2) * 0.00001;
+function checkReveal() {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      el.classList.add("active");
+    }
+  });
+}
+
+/* LOOP */
+function animate() {
+  ctx.clearRect(0,0,w,h);
+
+  particles.forEach(p => {
+    p.x += p.vx + (mouseX - w/2) * 0.00001;
+    p.y += p.vy + (mouseY - h/2) * 0.00001;
 
     if (p.x < 0) p.x = w;
     if (p.x > w) p.x = 0;
@@ -68,26 +69,22 @@ function animate() {
     if (p.y > h) p.y = 0;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
     ctx.fillStyle = `rgba(255,255,255,${p.o})`;
     ctx.fill();
-  }
+  });
 
-  // Smooth scroll
   currentScroll += (targetScroll - currentScroll) * 0.08;
 
-  back.style.transform =
-    `translateZ(-300px) translateY(${currentScroll * 0.1}px)`;
-  mid.style.transform =
-    `translateZ(0px) translateY(${currentScroll * 0.25}px)`;
-  front.style.transform =
-    `translateZ(150px) translateY(${currentScroll * 0.4}px)`;
+  back.style.transform = `translateZ(-300px) translateY(${currentScroll*0.1}px)`;
+  mid.style.transform = `translateY(${currentScroll*0.25}px)`;
+  front.style.transform = `translateZ(150px) translateY(${currentScroll*0.4}px)`;
 
-  // Scene tilt
   scene.style.transform =
-    `rotateX(${-(mouseY / h - 0.5) * 10}deg)
-     rotateY(${(mouseX / w - 0.5) * 10}deg)`;
+    `rotateX(${-(mouseY/h-0.5)*10}deg)
+     rotateY(${(mouseX/w-0.5)*10}deg)`;
 
+  checkReveal();
   requestAnimationFrame(animate);
 }
 
