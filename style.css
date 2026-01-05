@@ -14,13 +14,26 @@ body {
 }
 
 /* ===============================
-   AMBIENT BACKGROUND (ALWAYS MOVING)
+   AMBIENT BACKGROUND (MOVING)
    =============================== */
 .ambient-bg {
+  position: fixed;
+  inset: 0;
   background:
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08), transparent 40%),
     radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 50%);
+  animation: ambientMove 18s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes ambientMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, -40px) scale(1.05);
+  }
 }
 
 /* ===============================
