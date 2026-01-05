@@ -36,6 +36,9 @@ const back = document.querySelector(".back");
 const mid = document.querySelector(".mid");
 const front = document.querySelector(".front");
 
+/* LOGO FLOAT */
+const logo = document.querySelector(".logo span");
+
 let currentScroll = 0;
 let targetScroll = 0;
 
@@ -48,8 +51,7 @@ const reveals = document.querySelectorAll(".reveal");
 
 function checkReveal() {
   reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight * 0.85) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
       el.classList.add("active");
     }
   });
@@ -83,6 +85,9 @@ function animate() {
   scene.style.transform =
     `rotateX(${-(mouseY/h-0.5)*10}deg)
      rotateY(${(mouseX/w-0.5)*10}deg)`;
+
+  logo.style.transform =
+    `translateY(${Math.sin(Date.now()/800)*6}px)`;
 
   checkReveal();
   requestAnimationFrame(animate);
