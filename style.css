@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   background: #000;
   color: #fff;
@@ -19,10 +20,18 @@ body {
   left: 24px;
   z-index: 9999;
   padding: 14px 18px;
+  font-size: 20px;
+  letter-spacing: 0.2em;
   border: 1.5px solid #fff;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
-  letter-spacing: 0.2em;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  background: #fff;
+  color: #000;
 }
 
 /* PARTICLES */
@@ -32,7 +41,7 @@ body {
   z-index: -3;
 }
 
-/* AMBIENT */
+/* AMBIENT BACKGROUND */
 .ambient-bg {
   position: fixed;
   inset: 0;
@@ -44,7 +53,9 @@ body {
 }
 
 @keyframes ambientMove {
-  to { transform: translate(30px,-30px); }
+  to {
+    transform: translate(30px, -30px);
+  }
 }
 
 /* HERO */
@@ -54,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .layer {
@@ -67,8 +79,18 @@ body {
 
 .mid {
   text-align: center;
+  z-index: 2;
 }
 
+.front {
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(255,255,255,0.05)
+  );
+}
+
+/* HERO TEXT */
 h1 {
   font-size: 4rem;
   letter-spacing: 0.08em;
@@ -142,7 +164,7 @@ h1 {
   font-size: 0.8rem;
 }
 
-/* REVEAL */
+/* REVEAL ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -154,6 +176,7 @@ h1 {
   transform: translateY(0);
 }
 
+/* EXTRA SCROLL */
 .scroll-space {
   height: 100vh;
 }
