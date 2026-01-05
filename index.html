@@ -3,84 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vasudev — Founder | Editor</title>
+  <title>The Content House — Vasudev</title>
 
-  <!-- Font (similar modern editorial style) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<!-- Cursor -->
+<!-- Custom Cursor -->
 <div class="cursor"></div>
 
 <!-- NAV -->
 <header class="nav">
-  <img src="assets/logo.png" class="logo" alt="logo">
-  <a href="#contact" class="btn">Book a discovery call</a>
+  <div class="logo-wrap">
+    <img src="assets/logo.png" alt="logo">
+  </div>
+
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="btn">Book a Discovery Call</a>
+  </nav>
 </header>
 
 <!-- HOME -->
-<section class="section home fade">
-  <div class="home-text">
-    <h1>Hi, I'm <span>Vasudev</span></h1>
-    <h2>Founder | Editor</h2>
+<section class="section home">
+  <h1 class="shine word-animate">THE CONTENT HOUSE</h1>
 
-    <p class="subtitle">
-      Building content systems for founders that convert attention into trust.
-    </p>
-
-    <a href="#contact" class="btn secondary">Book a discovery call</a>
-  </div>
-
-  <div class="home-image">
-    <img src="assets/home.jpg" alt="Vasudev">
-  </div>
+  <p class="sub word-animate">
+    We act as your remote content team — handling strategy, scripting, editing,
+    and optimization, so you can stay focused on building your business.
+  </p>
 </section>
 
 <!-- ABOUT -->
-<section class="section about fade">
-  <h3>About</h3>
-  <p>
-    I’m Vasudev, a content-focused founder and editor helping creators and
-    businesses grow through consistent, high-quality short-form content.
-    I specialize in clean storytelling, minimal edits, and distribution-ready formats.
+<section class="section about" id="about">
+  <div class="about-text fade">
+    <h2>Hi, I’m Vasudev</h2>
+    <h3>Founder | Editor</h3>
+
+    <p>
+      I help founders escape competition through authenticity — by building
+      content systems that compound trust, clarity, and authority over time.
+    </p>
+
+    <p class="center-quote">
+      Escaping competition through authenticity
+    </p>
+  </div>
+
+  <div class="about-image fade">
+    <img src="assets/about.jpg" alt="Vasudev">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <h2 class="fade">What We Do</h2>
+  <p class="fade">
+    Strategy-first short-form systems, clean edits, platform-native storytelling,
+    and distribution-ready execution — without noise.
   </p>
 </section>
 
 <!-- PROJECTS -->
-<section class="section projects fade">
-  <div class="project-head">
-    <h3>Flawless short-form content</h3>
-    <p>
-      We help founders to provide consistent, high-targeted content
-      with clean, minimal edits.
-    </p>
-  </div>
+<section class="section projects" id="projects">
+  <h2 class="fade">Flawless Short-Form Content</h2>
+  <p class="fade">
+    Content that doesn’t just perform — it positions.
+  </p>
 
-  <div class="project-grid">
-    <div class="reel">Reel 1</div>
-    <div class="reel">Reel 2</div>
-    <div class="reel">Reel 3</div>
-  </div>
+  <div class="embed-grid">
+    <div class="embed-box fade">
+      <!-- IG REEL -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKTKKKDggO/"
+        data-instgrm-version="14"></blockquote>
+    </div>
 
-  <div class="yt">
-    YouTube Long-Form Placeholder
+    <div class="embed-box fade">
+      <!-- THREADS -->
+      <blockquote class="text-post-media"
+        data-text-post-permalink="https://www.threads.com/@_vasudev_naidu_/post/DDFdyVpSLc-"></blockquote>
+    </div>
+
+    <div class="embed-box fade">
+      <!-- IG LONG -->
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKVwAMDmv2/"
+        data-instgrm-version="14"></blockquote>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section contact fade" id="contact">
-  <h3>Contact</h3>
+<section class="section contact" id="contact">
+  <h2 class="fade">Connect</h2>
 
-  <div class="socials">
-    <a href="https://www.instagram.com/?next=%2F" target="_blank">Instagram</a>
+  <div class="socials fade">
+    <a href="https://www.instagram.com/_vasudev_naidu_/" target="_blank">Instagram</a>
+    <a href="https://www.threads.com/@_vasudev_naidu_" target="_blank">Threads</a>
     <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">LinkedIn</a>
     <a href="mailto:hello@withvasu.com">Email</a>
-    <a href="#" title="Calendly">Calendly</a>
+    <a href="https://calendly.com/naiduvasu825/discussion" class="btn">Book a Discovery Call</a>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span>The Content House © 2026</span>
+</footer>
+
+<!-- Embed scripts -->
+<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.threads.com/embed.js"></script>
 
 <script src="script.js"></script>
 </body>
