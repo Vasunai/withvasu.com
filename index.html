@@ -2,116 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Content House — Vasudev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>With Vasu</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- INSTAGRAM + THREADS -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script async src="https://www.threads.net/embed.js"></script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 <!-- NAV -->
-<header class="nav">
-  <div class="logo-wrap">
-    <img src="assets/logo.png" alt="Logo">
-  </div>
-
-  <nav>
-    <a href="#" class="nav-link" data-scroll="about">About</a>
-    <a href="#" class="nav-link" data-scroll="services">Services</a>
-    <a href="#" class="nav-link" data-scroll="projects">Projects</a>
-    <a href="#" class="nav-link" data-scroll="contact">Contact</a>
-  </nav>
+<header>
+  <img src="assets/logo.png" class="logo" />
 </header>
 
-<!-- HOME -->
-<section class="section home reveal">
-  <h1 class="shine">THE CONTENT HOUSE</h1>
-  <p class="home-sub">
-    we act as your remote content team — handling strategy, scripting,
-    editing, and optimization, so you can stay focused on building your business.
-  </p>
-
-  <button class="btn-outline scroll-contact">Book a Discovery Call</button>
+<!-- HERO -->
+<section class="hero fade">
+  <h1>A</h1>
+  <p class="tagline">Escaping Competition Through Authenticity</p>
 </section>
 
 <!-- ABOUT -->
-<section class="section about reveal" data-section="about">
-  <div class="about-text">
-    <h2>Hi, I’m Vasudev</h2>
-    <h3>Founder · Editor</h3>
-    <p>
-      At The Content House, we help founders escape competition through
-      authenticity — by building content systems that convert attention into trust.
-    </p>
+<section class="about fade">
+  <div>
+    <h2>The Content House</h2>
+    <p>I help creators and brands stand out by being real, not loud.</p>
   </div>
-
-  <div class="about-image">
-    <img src="assets/home.jpg" alt="Vasudev">
-  </div>
+  <img src="assets/profile.jpg" class="profile" />
 </section>
 
-<!-- SERVICES -->
-<section class="section services reveal" data-section="services">
-  <h2>Services</h2>
-  <p class="center-text">
-    Strategy · Scripting · Editing · Optimization — done end-to-end.
-  </p>
-</section>
-
-<!-- PROJECTS -->
-<section class="section projects reveal" data-section="projects">
-
-  <h2>Flawless Short-Form Content</h2>
-  <p class="center-text">
-    High-targeted edits designed for retention, clarity, and brand trust.
-  </p>
+<!-- WORK -->
+<section class="work fade">
+  <h2>Work</h2>
 
   <div class="embed-grid">
-    <!-- IG REEL -->
-    <div class="embed-frame">
-      <!-- PASTE IG REEL EMBED HERE (UNCHANGED) -->
+
+    <!-- IG POST 1 -->
+    <div class="embed-card">
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKTKKKDggO/">
+      </blockquote>
     </div>
 
     <!-- THREADS -->
-    <div class="embed-frame">
-      <!-- PASTE THREADS EMBED HERE (UNCHANGED) -->
+    <div class="embed-card">
+      <blockquote class="text-post-media"
+        data-text-post-permalink="https://www.threads.net/@_vasudev_naidu_/post/DDFdyVpSLc-">
+      </blockquote>
     </div>
 
-    <!-- IG LONG -->
-    <div class="embed-frame">
-      <!-- PASTE IG LONG EMBED HERE (UNCHANGED) -->
+    <!-- IG POST 2 -->
+    <div class="embed-card">
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DQKVwAMDmv2/">
+      </blockquote>
     </div>
+
   </div>
-
 </section>
 
 <!-- CONTACT -->
-<section class="section contact reveal" data-section="contact">
+<section class="contact fade" id="contact">
   <h2>Contact</h2>
-
-  <div class="socials">
-    <a href="https://www.instagram.com/_vasudev_naidu_/" target="_blank">IG</a>
-    <a href="https://www.threads.com/@_vasudev_naidu_" target="_blank">TH</a>
-    <a href="https://www.linkedin.com/in/vasudev-naidu-92479029a/" target="_blank">IN</a>
-    <a href="mailto:hello@withvasu.com">✉</a>
-    <a href="https://calendly.com/naiduvasu825/discussion" target="_blank">📅</a>
-  </div>
+  <p>Let’s build something meaningful.</p>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-nav">
-    <span>The Content House</span>
-    <button class="scroll-contact">Book a Discovery Call</button>
+<footer>
+  <div class="socials">
+    <a href="https://instagram.com/_vasudev_naidu_" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://threads.net/@_vasudev_naidu_" target="_blank"><i class="fab fa-threads"></i></a>
+    <a href="mailto:hello@withvasu.com"><i class="fas fa-envelope"></i></a>
   </div>
-  <small>© 2026 The Content House. All rights reserved.</small>
+  <p>© 2026 With Vasu</p>
 </footer>
-
-<!-- EMBED SCRIPTS (ONLY ONCE) -->
-<script async src="//www.instagram.com/embed.js"></script>
-<script async src="https://www.threads.com/embed.js"></script>
 
 <script src="script.js"></script>
 </body>
