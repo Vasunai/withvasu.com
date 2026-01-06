@@ -1,11 +1,7 @@
-const fades = document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    e.target.classList.toggle("visible",e.isIntersecting)
+  })
+},{threshold:0.25})
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-fades.forEach(el => observer.observe(el));
+document.querySelectorAll(".fade,.words").forEach(el=>observer.observe(el))
