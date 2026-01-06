@@ -1,32 +1,36 @@
-/* REMOVE HASH IF EXISTS */
-if (window.location.hash) {
-  history.replaceState(null, '', window.location.pathname);
-}
+/* FADE IN ON SCROLL */
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-/* SMOOTH SCROLL WITHOUT URL CHANGE */
-function scrollToSection(name) {
-  const section = document.querySelector(`[data-section="${name}"]`);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+/* REMOVE #content / ANY HASH CAUSED BY EMBEDS */
+function cleanHash() {
+  if (window.location.hash) {
+    history.replaceState(
+      null,
+      document.title,
+      window.location.pathname + window.location.search
+    );
   }
 }
 
-document.querySelectorAll('[data-scroll]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    scrollToSection(link.dataset.scroll);
-  });
+/* Run after embeds load */
+window.addEventListener("load", () => {
+  setTimeout(cleanHash, 500);
 });
 
-document.querySelectorAll('.scroll-contact').forEach(btn => {
-  btn.addEventListener('click', () => scrollToSection('contact'));
+/* Prevent future hash injection */
+window.addEventListener("hashchange", () => {
+  cleanHash();
 });
-
-/* REVEAL ON SCROLL (UP & DOWN) */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle('active', entry.isIntersecting);
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
