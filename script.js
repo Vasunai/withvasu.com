@@ -1,32 +1,18 @@
-/* REMOVE HASH IF EXISTS */
+/* REMOVE HASH ON LOAD */
 if (window.location.hash) {
   history.replaceState(null, '', window.location.pathname);
 }
 
-/* SMOOTH SCROLL WITHOUT URL CHANGE */
-function scrollToSection(name) {
-  const section = document.querySelector(`[data-section="${name}"]`);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-document.querySelectorAll('[data-scroll]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    scrollToSection(link.dataset.scroll);
-  });
+/* REMOVE HASH IF EMBEDS TRY TO ADD IT */
+window.addEventListener('hashchange', () => {
+  history.replaceState(null, '', window.location.pathname);
 });
 
-document.querySelectorAll('.scroll-contact').forEach(btn => {
-  btn.addEventListener('click', () => scrollToSection('contact'));
-});
-
-/* REVEAL ON SCROLL (UP & DOWN) */
+/* FADE ANIMATION (UP & DOWN) */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    entry.target.classList.toggle('active', entry.isIntersecting);
+    entry.target.classList.toggle('show', entry.isIntersecting);
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
