@@ -1,18 +1,11 @@
-/* REMOVE HASH ON LOAD */
-if (window.location.hash) {
-  history.replaceState(null, '', window.location.pathname);
-}
+const fades = document.querySelectorAll('.fade');
 
-/* REMOVE HASH IF EMBEDS TRY TO ADD IT */
-window.addEventListener('hashchange', () => {
-  history.replaceState(null, '', window.location.pathname);
-});
-
-/* FADE ANIMATION (UP & DOWN) */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    entry.target.classList.toggle('show', entry.isIntersecting);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
   });
-}, { threshold: 0.15 });
+});
 
-document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+fades.forEach(el => observer.observe(el));
