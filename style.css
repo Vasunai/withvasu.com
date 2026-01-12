@@ -8,23 +8,7 @@ body {
   background: #0f0f0f;
   color: #f5f5f5;
   font-family: Inter, system-ui, sans-serif;
-  line-height: 1.5;
-}
-
-/* INTRO */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: #0f0f0f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-#intro h1 {
-  font-size: 3rem;
-  letter-spacing: 2px;
+  line-height: 1.4;
 }
 
 /* NAV */
@@ -32,7 +16,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 24px 8%;
+  padding: 20px 8%;
   display: flex;
   justify-content: space-between;
   z-index: 10;
@@ -40,7 +24,7 @@ body {
 
 .nav a {
   color: #f5f5f5;
-  margin-left: 24px;
+  margin-left: 20px;
   text-decoration: none;
   font-size: 0.9rem;
 }
@@ -49,20 +33,45 @@ body {
   font-weight: 500;
 }
 
-/* SECTIONS */
+/* SECTIONS (TIGHT) */
 .section {
-  min-height: 100vh;
-  padding: 140px 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 110px 8% 80px;
 }
 
-/* REVEAL ANIMATION */
+/* HOME */
+.home {
+  padding-top: 160px;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  max-width: 900px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 2.4rem;
+  max-width: 800px;
+  margin-bottom: 14px;
+}
+
+.sub {
+  font-size: 1.05rem;
+  max-width: 620px;
+  opacity: 0.75;
+}
+
+/* REVEAL */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 
 .reveal.active {
@@ -70,71 +79,45 @@ body {
   transform: translateY(0);
 }
 
-.eyebrow {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  margin-bottom: 16px;
+/* WORK */
+.work h2 {
+  margin-bottom: 30px;
 }
 
-h2 {
-  font-size: 3rem;
-  max-width: 900px;
-  margin-bottom: 20px;
+.embed-grid {
+  display: grid;
+  gap: 28px;
+  max-width: 520px;
 }
 
-.sub {
-  font-size: 1.1rem;
-  max-width: 620px;
-  opacity: 0.8;
+/* CONTACT */
+.contact {
+  padding-bottom: 60px;
 }
 
-/* CTA */
 .cta {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .cta a {
   display: inline-block;
-  margin-right: 20px;
-  padding: 12px 26px;
+  margin-right: 18px;
+  padding: 10px 22px;
   border: 1px solid #f5f5f5;
   color: #f5f5f5;
   text-decoration: none;
-}
-
-/* PROCESS */
-.process div {
-  font-size: 2rem;
-  margin: 24px 0;
-}
-
-/* WORK */
-.embed-grid {
-  margin-top: 40px;
-  display: grid;
-  gap: 32px;
-}
-
-.embed-grid iframe {
-  width: 100%;
-  height: 420px;
-}
-
-.note {
-  margin-top: 24px;
-  font-size: 0.85rem;
-  opacity: 0.6;
+  font-size: 0.9rem;
 }
 
 /* FOOTER */
 footer {
-  padding: 80px 8%;
-  font-size: 0.85rem;
-  opacity: 0.7;
+  padding: 40px 8%;
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 .socials a {
-  margin-right: 16px;
+  margin-right: 14px;
   color: #f5f5f5;
   text-decoration: none;
 }
