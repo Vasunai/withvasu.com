@@ -1,35 +1,28 @@
 // Split text into words
-function splitWords(element) {
-  const words = element.innerText.split(" ");
-  element.innerHTML = words
-    .map(word => `<span class="word">${word}&nbsp;</span>`)
-    .join("");
-}
+document.querySelectorAll(".animate").forEach(el => {
+  const words = el.innerText.split(" ");
+  el.innerHTML = words.map(w => `<span class="word">${w}&nbsp;</span>`).join("");
+});
 
-document.querySelectorAll("h1, h2, .sub").forEach(splitWords);
+const stories = document.querySelectorAll(".story");
 
-// Observe sections
-const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  stories.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const progress = 1 - Math.min(Math.max(rect.top / window.innerHeight, 0), 1);
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      const words = entry.target.querySelectorAll(".word");
+    const words = section.querySelectorAll(".word");
+    words.forEach((word, i) => {
+      const delay = i / words.length;
+      const visible = progress - delay;
 
-      if (entry.isIntersecting) {
-        words.forEach((word, i) => {
-          setTimeout(() => word.classList.add("show"), i * 40);
-        });
+      if (visible > 0) {
+        word.style.opacity = Math.min(visible * 2, 1);
+        word.style.transform = `translateY(${16 - visible * 16}px)`;
       } else {
-        words.forEach((word, i) => {
-          setTimeout(() => word.classList.remove("show"), i * 20);
-        });
+        word.style.opacity = 0;
+        word.style.transform = "translateY(16px)";
       }
     });
-  },
-  {
-    threshold: 0.6
-  }
-);
-
-sections.forEach(section => observer.observe(section));
+  });
+});
