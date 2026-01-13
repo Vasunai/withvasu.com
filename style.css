@@ -11,8 +11,8 @@ body {
   line-height: 1.4;
 }
 
-/* NAV */
-.nav {
+/* HEADER */
+header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -20,9 +20,10 @@ body {
   display: flex;
   justify-content: space-between;
   z-index: 10;
+  background: #0f0f0f;
 }
 
-.nav a {
+header a {
   color: #f5f5f5;
   margin-left: 20px;
   text-decoration: none;
@@ -33,79 +34,81 @@ body {
   font-weight: 500;
 }
 
-/* SECTIONS (TIGHT) */
-.section {
-  padding: 110px 8% 80px;
+/* MAIN */
+main {
+  padding-top: 120px;
 }
 
-/* HOME */
-.home {
-  padding-top: 160px;
+/* STORY SECTIONS */
+section {
+  height: 100vh;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
 }
 
+/* TEXT */
 .eyebrow {
   font-size: 0.85rem;
   opacity: 0.6;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+h1, h2, .sub {
+  overflow: hidden;
 }
 
 h1 {
-  font-size: 3.2rem;
-  max-width: 900px;
-  margin-bottom: 16px;
+  font-size: 3rem;
+  margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 2.4rem;
-  max-width: 800px;
-  margin-bottom: 14px;
+  font-size: 2.2rem;
+  margin-bottom: 18px;
 }
 
 .sub {
   font-size: 1.05rem;
-  max-width: 620px;
   opacity: 0.75;
+  max-width: 650px;
 }
 
-/* REVEAL */
-.reveal {
+/* WORD ANIMATION */
+.word {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.reveal.active {
+.word.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* WORK */
-.work h2 {
-  margin-bottom: 30px;
+.word.hide {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
-.embed-grid {
+/* WORK */
+.reels {
+  margin-top: 30px;
   display: grid;
-  gap: 28px;
-  max-width: 520px;
+  gap: 24px;
+  max-width: 500px;
 }
 
 /* CONTACT */
-.contact {
-  padding-bottom: 60px;
-}
-
-.cta {
-  margin-top: 20px;
-}
-
-.cta a {
-  display: inline-block;
-  margin-right: 18px;
-  padding: 10px 22px;
-  border: 1px solid #f5f5f5;
-  color: #f5f5f5;
+.links a {
+  margin-right: 20px;
   text-decoration: none;
+  color: #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 2px;
   font-size: 0.9rem;
 }
 
@@ -114,10 +117,4 @@ footer {
   padding: 40px 8%;
   font-size: 0.8rem;
   opacity: 0.6;
-}
-
-.socials a {
-  margin-right: 14px;
-  color: #f5f5f5;
-  text-decoration: none;
 }
