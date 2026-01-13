@@ -30,19 +30,14 @@ header a {
   font-size: 0.9rem;
 }
 
+/* MAIN */
 main {
   padding-top: 120px;
 }
 
-/* STORY SECTIONS */
-.story {
-  height: 200vh; /* scroll space for animation */
-}
-
-.sticky {
-  position: sticky;
-  top: 120px;
-  height: calc(100vh - 120px);
+/* ONE SCREEN = ONE IDEA */
+.screen {
+  min-height: 100vh;
   padding: 0 8%;
   display: flex;
   flex-direction: column;
@@ -73,16 +68,9 @@ h2 {
   max-width: 650px;
 }
 
-/* WORD ANIMATION */
-.word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(16px);
-}
-
 /* WORK */
 .reels {
-  margin-top: 30px;
+  margin-top: 28px;
   display: grid;
   gap: 24px;
   max-width: 500px;
@@ -102,4 +90,16 @@ footer {
   padding: 40px 8%;
   font-size: 0.8rem;
   opacity: 0.6;
+}
+
+/* SIMPLE, RELIABLE ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
