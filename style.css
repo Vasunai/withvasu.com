@@ -30,6 +30,10 @@ header a {
   font-size: 0.9rem;
 }
 
+.brand {
+  font-weight: 500;
+}
+
 /* MAIN */
 main {
   padding-top: 120px;
@@ -92,14 +96,20 @@ footer {
   opacity: 0.6;
 }
 
-/* SIMPLE, RELIABLE ANIMATION */
-.reveal {
+/* WORD ANIMATION */
+.word {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.reveal.active {
+.word.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.word.hide {
+  opacity: 0;
+  transform: translateY(-16px);
 }
